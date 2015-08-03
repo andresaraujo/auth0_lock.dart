@@ -16,3 +16,11 @@ The `auth0-lock.js` must be included for the wrapper to work:
 <!-- Latest patch release (recommended for production) -->
 <script src="http://cdn.auth0.com/js/lock-7.x.y.min.js"></script>
 ```
+
+### Notes
+
+The Dart version uses a more idiomatic API, instead of passing callbacks it uses Futures
+
+### Example
+
+See [example](https://github.com/andresaraujo/auth0_lock.dart/blob/master/example/main.dart)
