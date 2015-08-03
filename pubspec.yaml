@@ -1,6 +1,6 @@
 name: 'auth0_lock'
 version: 0.1.0
-description: A Dart wrapper for AUth0 Lock
+description: A Dart wrapper for Auth0 Lock
 author: Andres Araujo <a.araujo.azua@gmail.com>
 homepage: https://github.com/andresaraujo/auth0_lock.dart
 
