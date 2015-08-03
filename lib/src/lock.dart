@@ -68,6 +68,8 @@ class Auth0Lock {
   /// Show widget on `signin` mode with  signup and reset actions disabled by default so no action buttons
   /// are present on widget.
   ///
+  /// For SPA use [popupMode] = true, otherwise it will use a redirect. [popupMode] defaults to false
+  ///
   /// For options specification check: https://auth0.com/docs/libraries/lock/customization
   ///
   /// If the Future resolves as success it will contain the following map:
@@ -84,12 +86,19 @@ class Auth0Lock {
       });
     };
 
-    _auth0lock.callMethod('showSignin', [jsify(options), callback]);
+    if(popupMode) {
+      _auth0lock.callMethod('showSignin', [jsify(options), callback]);
+    } else {
+      _auth0lock.callMethod('showSignin', [jsify(options)]);
+      c.complete();
+    }
     return c.future;
   }
 
   /// Show widget on `reset` mode with signup and reset actions disabled by default so no action buttons
   /// are present on widget.
+  ///
+  /// For SPA use [popupMode] = true, otherwise it will use a redirect. [popupMode] defaults to false
   ///
   /// For options specification check: https://auth0.com/docs/libraries/lock/customization
   ///
@@ -107,12 +116,20 @@ class Auth0Lock {
       });
     };
 
-    _auth0lock.callMethod('showSignup', [jsify(options), callback]);
+    if(popupMode) {
+      _auth0lock.callMethod('showSignup', [jsify(options), callback]);
+    } else {
+      _auth0lock.callMethod('showSignup', [jsify(options)]);
+      c.complete();
+    }
+
     return c.future;
   }
 
   /// Show widget on `reset` mode with signup and reset actions disabled by default so no action buttons
   /// are present on widget.
+  ///
+  /// For SPA use [popupMode] = true, otherwise it will use a redirect. [popupMode] defaults to false
   ///
   /// For options specification check: https://auth0.com/docs/libraries/lock/customization
   ///
@@ -130,7 +147,12 @@ class Auth0Lock {
       });
     };
 
-    _auth0lock.callMethod('showReset', [jsify(options), callback]);
+    if(popupMode) {
+      _auth0lock.callMethod('showReset', [jsify(options), callback]);
+    } else {
+      _auth0lock.callMethod('showReset', [jsify(options)]);
+      c.complete();
+    }
     return c.future;
   }
 
