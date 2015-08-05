@@ -5,8 +5,6 @@ void main() {
   var lock = new Auth0Lock(
       '3b2XIdWiDglqpkTaIEqYf2nT3duXeSXW', 'andresaraujo.auth0.com');
 
-  var userProfile = null;
-
   dom.querySelector("#login_popup").onClick.listen((_) {
     lock.show(popupMode: true, options: {'authParams': {'scope': 'openid profile'}}).then(updateProfileName);
   });
